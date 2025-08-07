@@ -4,6 +4,6 @@
 ## Collaborators:
 - Indradhanush J
 - Mahima Jyothi
-- Nandini Pachappa
-- Vijaya Seetha
+- Nandini P
+- Seetha Vijaya
 - Vishal Chawla
