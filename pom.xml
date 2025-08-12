@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.var</groupId>
-	<artifactId>springrestjpademo</artifactId>
+	<artifactId>Telecommunication-Web-App</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springrestjpademo</name>
+	<name>Telecommunication-Web-App</name>
 	<description>Demo project for Spring Boot</description>
 	<url />
 	<licenses>
