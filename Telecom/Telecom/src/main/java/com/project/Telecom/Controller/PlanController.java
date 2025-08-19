@@ -15,46 +15,41 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.project.Telecom.Dto.UserDto;
-import com.project.Telecom.Entity.User;
+import com.project.Telecom.Dto.PlanDto;
+import com.project.Telecom.Entity.Plan;
 import com.project.Telecom.Exceptions.UserNotFoundException;
-import com.project.Telecom.Service.UserService;
+import com.project.Telecom.Service.PlanService;
 
 
 @RestController
-public class UserController {
+public class PlanController {
 	@Autowired
-	UserService userService;
+	PlanService planService;
 	@Autowired
 	ModelMapper modelMapper;
 	
-	@PostMapping("/api/users")
-	public void add(UserDto userdto) {
-		User user=modelMapper.map(userdto, User.class);
-		userService.add(user);
+	@PostMapping("/api/plans")
+	public void add(PlanDto plandto) {
+		Plan plan=modelMapper.map(plandto,Plan.class);
+		planService.add(plan);
 	}
 	
-	@GetMapping("/welcome")
-	public String welcome() {
-		return "welcome";
-	}
-	
-	@PutMapping("/api/users/{id}")
-	public String update(@PathVariable("id") Long id,@RequestBody UserDto userDto)  throws Exception{
-		userService.updateuser(id,modelMapper.map(userDto, User.class));
+	@PutMapping("/api/plans/{id}")
+	public String update(@PathVariable("id") Long id,@RequestBody PlanDto planDto)  throws Exception{
+		planService.updateplan(id,modelMapper.map(planDto, Plan.class));
 		return "updated";
 	}
 	
-	@GetMapping("/api/users")
-	public List<UserDto> getAllUsers() {
-		List<User> userList= userService.getAllUsers();
-		return userList.stream().map(User->modelMapper.map(User,UserDto.class)).collect(Collectors.toList());
+	@GetMapping("/api/plans")
+	public List<PlanDto> getAllPlan() {
+		List<Plan> planList= planService.getAllPlans();
+		return planList.stream().map(Plan->modelMapper.map(Plan,PlanDto.class)).collect(Collectors.toList());
 
 	}
 	
-	@DeleteMapping("api/users/{id}")
+	@DeleteMapping("api/plans/{id}")
 	public String deleteProduct(@PathVariable("id") Long id) throws UserNotFoundException {
-		userService.deleteUser(id);
+		planService.deletePlan(id);
 		return "deleted";
 	}
 }

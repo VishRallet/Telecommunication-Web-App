@@ -1,10 +1,9 @@
 package com.project.Telecom;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+
 
 @SpringBootTest
-class TelecomApplicationTests {
+public class TelecomApplicationTests {
 
 	@Test
 	void contextLoads() {
